@@ -1,3 +1,4 @@
+//This project requires libraries
 #include <SPI.h> 
 #include <RFID.h>
 #include <Servo.h> 
