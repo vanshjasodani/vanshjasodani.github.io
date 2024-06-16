@@ -3,6 +3,7 @@
 //   I2C LCD1602
  //  SDA --> A4
  //  SCL --> A5
+// This project requires libraries
 
 //Libraries
 #include <DHT.h>;
