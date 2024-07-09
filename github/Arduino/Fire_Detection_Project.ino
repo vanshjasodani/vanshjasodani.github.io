@@ -1,4 +1,4 @@
-//By Vansh Jasodani: vanshjasodani.github.io
+//By Vansh Jasodani: https://vanshjasodani.github.io/
 //If any doubts refer to: https://youtu.be/72DBEkGgu-w?si=i5jKp97OBcmgBtc-
 const int buzzerPin = 12;
 const int flamePin = 11;
