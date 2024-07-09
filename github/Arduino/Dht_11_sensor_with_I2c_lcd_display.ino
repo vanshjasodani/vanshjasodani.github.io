@@ -1,4 +1,5 @@
 //Vansh Jasodani: https://vanshjasodani.github.io/
+//For this project you will need I2C LCD Library
 //   Temperature and humidity sensor and
 //   I2C LCD1602
  //  SDA --> A4
