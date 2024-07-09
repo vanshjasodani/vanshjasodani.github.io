@@ -1,3 +1,5 @@
+//Vansh Jasodani: https://vanshjasodani.github.io/
+//For this project you will need I2C LCD Library
 #include <LiquidCrystal_I2C.h>
 
 LiquidCrystal_I2C lcd(0x27, 16, 2); // I2C address 0x3F, 16 column and 2 rows
