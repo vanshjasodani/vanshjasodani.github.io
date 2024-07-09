@@ -1,3 +1,5 @@
+//Vansh jasodani: https://vanshjasodani.github.io/
+//For this project you will need RFID library
 #include <SPI.h> 
 #include <RFID.h>
 #include <Servo.h> 
