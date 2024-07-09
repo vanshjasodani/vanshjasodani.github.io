@@ -1,3 +1,4 @@
+//Vansh Jasodani: https://vanshjasodani.github.io/
 #include<Servo.h>
 
 #define trigPin 8
