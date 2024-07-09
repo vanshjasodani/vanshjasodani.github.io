@@ -1,4 +1,4 @@
-//* How to use the DHT-11 sensor with Arduino
+//Vansh Jasodani: https://vanshjasodani.github.io/
 //   Temperature and humidity sensor and
 //   I2C LCD1602
  //  SDA --> A4
