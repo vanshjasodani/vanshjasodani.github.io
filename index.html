@@ -1,39 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <Title>Vansh Jasodani's Website</Title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vansh Jasodani's Portfolio</title>
+    <link rel="icon" href="My Portfolio Website Logo.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            margin: 0;
+            padding: 10px;
+            background-color: #444;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        section {
+            padding: 20px;
+            margin: 10px;
+        }
+        .hero {
+            width: 100%;
+            height: 300px;
+            background: url('Vansh_Passport_Photo.jpg') no-repeat center center;
+            background-size: cover;
+        }
+        button {
+            display: block;
+            margin: 10px 0;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+    </style>
 </head>
-<body bgcolor="lightblue">
-<link rel="icon" href=
-"favicon.png" 
-          type="image/x-icon">
-<style>
-  hr {
-    border-color: black;
-  }
-</style>
-<hr size="10">
-<center>Hey, this is my first website <br>
-<img src="Vansh_Passport_Photo.JPG" alt="Vansh" width="500" height="333">
-<h1>VANSH JASODANI</h1>
-<h3>E-mail: vanshamazing96@gmail.com</h3>
-<hr size="10">
-<a href="github/index.html"> Vansh Jasodani's Portfolio</a>
-<hr size="10">
-<h2>Arduino Project Codes</h2>
-</center>
-<ul>
-  <li> <a href="github/Arduino/RFID.ino"> RFID Door Lock</a> </li>
-  <li> <a href="github/Arduino/Ultrasonic_Sensor_Radar.ino"> Ultrasonic Sensor Radar</a> </li>
-  <li> <a href="github/Arduino/LCD_Distance_Measuring_Project.ino"> LCD Distance Measuring Project</a> </li>
-  <li> <a href="github/Arduino/Dht_11_sensor_with_I2c_lcd_display.ino"> Temperature and Humidity Detector using Dht 11 sensor and I2c lcd display</a> </li>
-  <li> <a href="github/Arduino/Fire_Detection_Project.ino"> Fire Detection Project Using Flame Sensor</a> </li>
-  <li> <a href="github/Arduino/LDR_Project.ino"> LDR Sensor Project</a> </li>
-  <li> <a href="github/Arduino/Open_Door_Detector.ino"> Open Door Detector Project using Flex sensor</a> </li>
-</ul>
-<center>
-<h4>Videos of all the projects whose codes are mentioned here are available in my Portfolio</h4>
-<h4>Also the links of YouTube tutorials which I followed are provided in the codes itself</h4>
-<hr size="10">
-<h3>Thank You</h3>
-<hr size="10">
-</center>
+<body>
+    <header>
+        <h1>Vansh Jasodani</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#artwork">Art Work</a></li>
+            <li><a href="#music">Music</a></li>
+            <li><a href="#cocurricular">Co-Curricular</a></li>
+            <li><a href="#merit">Merit</a></li>
+            <li><a href="#sports">Sports</a></li>
+        </ul>
+    </nav>
+    <div class="hero"></div>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Write something about yourself here.</p>
+    </section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vSYlvPtB2omNvQRjWx7HqB8jRB_Cas0AwBeSEkYSSNMcBW4AvWxjsXcmyMCi6QmiUcuGptCFgh7DeHv/pub?start=true&loop=true&delayms=3000'">RFID Door Lock</button>
+        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vQZsc7QXValkt6Mlpn8YVPtiNUqmC5wlhEmI1o_AWTxwMLeuV5cBf34gLUBPC-a0z8kX1q_ssqEEgMm/pub?start=true&loop=true&delayms=3000'">Distance Measuring Project</button>
+        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vTXkDQ0gtfgI-_Yc8AGbX0XJJNFdKu5sNiXtNCqJpYzaGrQTyNsIO28S-kuYminrDtZeepcmNSGX3OT/pub?start=true&loop=true&delayms=3000'">Fire Detection Project</button>
+        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vR3MRBI17-H2m-USlt_-LYPPtwe04WA41lgqOMgvhCGRQmU9M4nMB4Sk33HQoKg9fpMcujU-4qlwOIF/pub?start=true&loop=true&delayms=3000'">LDR Project</button>
+        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vQU3FKkUyXR7vBYDzktJaKe9EjKDX2NqAEqYEHGOnTka9E-UHxhAq2k0_X8oDLUmXgRuJwRaVRzYU1o/pub?start=true&loop=true&delayms=3000'">Ultrasonic Sensor Radar</button>
+        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vRcPXG7bEKj2MN5IJPdKidv15zqESMLBc4qRbuxenEbn4Nfaj4NJX2mhpge65IwbMaJ6aDu2ktH99uA/pub?start=true&loop=true&delayms=3000'">Tempereture and Humidity Detector</button>
+      <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vRLtMCwBsjrYQHbNlH5tEQ_bjziiK19qrRARz_rG6zeNYJG5KZirXi5DZa53a_4BswAgAliMPwWcn94/pub?start=true&loop=true&delayms=3000'">Open Door Detector</button>
+    </section>
+    <section id="artwork">
+        <h2>Art Work</h2>
+        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vRusRDt4nE0n2Z4uXryKiUO_DXlWyZLxeblDA2Uwc8VAbijQyP6WKi0bmdzmPK5Eu_zlZsueXbsmNG5/pub?start=true&loop=true&delayms=3000'">View Art Work</button>
+    </section>
+    <section id="music">
+        <h2>Music</h2>
+        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vTHB97nRB8koWGsydSc3Vm7PMHIq__3A-XjExLH95ZNS-EhSdgLRcjkYmaraGaHPZxy_RqsF_6vw1p7/pub?start=true&loop=true&delayms=3000'">Listen to Music</button>
+    </section>
+    <section id="cocurricular">
+        <h2>Co-Curricular</h2>
+        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vQaCVQIHff98hXYt4Otteg3L6fQQMnDVlexm3NKiivuLttsokeyz4xbBFsDyKvcjkjD1NEuYBjgYrPH/pub?start=true&loop=true&delayms=3000'">View Co-Curricular Activities</button>
+    </section>
+    <section id="merit">
+        <h2>Merit</h2>
+        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vQV7vB5zuD3Z3tHpkpIDnVtpfyxgKNlSEeVuYcBcc51akPvSGaWGkCxYI8R_89vsu9EAmfciUwCJQlx/pub?start=true&loop=true&delayms=3000'">View Merits</button>
+    </section>
+    <section id="sports">
+        <h2>Sports</h2>
+        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vQ3A_eJyLJ50Aw3UEhxfcQJC7upJZtyzRRaPQae5AI8vX9Ii8qqhNVZ-z93Sw-tup1YNYv2um__uwMY/pub?start=true&loop=true&delayms=3000'">View Sports Achievements</button>
+    </section>
 </body>
+</html>
