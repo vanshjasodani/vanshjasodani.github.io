@@ -44,20 +44,39 @@
         section {
             padding: 20px;
             margin: 10px;
-        }
-        .hero {
-            width: 100%;
-            height: 700px;
-            background: url('images/Vansh_Passport_Photo.JPG') no-repeat center center;
-            background-size: cover;
-            margin-top: 0px;
+            color: white; /* Text color */
+            background-size: cover; /* Ensure image covers the entire section */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent repeating */
+            height: 300px; /* Set a height for the sections */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         #about {
-            position: relative;
-            margin-top: -150px; /* Adjust this value as needed for the desired overlap */
+             margin-top: -150px; /* Adjust this value as needed for the desired overlap */
             padding: 20px;
             background: rgba(255, 255, 255, 0.3); /* Adjust the opacity here */
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0); /* Adjust the shadow here */
+        }
+        }
+        #projects {
+            background-image: url('images/projects background.jpg');
+        }
+        #artwork {
+            background-image: url('images/art background.jpg');
+        }
+        #music {
+            background-image: url('images/music background.jpg');
+        }
+        #cocurricular {
+            background-image: url('images/co curricular background.jpg');
+        }
+        #merit {
+            background-image: url('images/merit background.jpg');
+        }
+        #sports {
+            background-image: url('images/sports background.jpg');
         }
         button {
             display: block;
@@ -97,7 +116,6 @@
             <li><a href="#sports">Sports</a></li>
         </ul>
     </nav>
-    <div class="hero"></div>
     <section id="about">
         <h2>About Me</h2>
         <p>I am Vansh Kamalkumar Jasodani. I study in grade 8 (as in 2024) in <a href="https://www.rachanaschool.com/"> Rachana School </a>. Here you will see my portfolio. <br>
@@ -121,11 +139,11 @@
     </section>
     <section id="music">
         <h2>Music</h2>
-        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vTHB97nRB8koWGsydSc3Vm7PMHIq__3A-XjExLH95ZNS-EhSdgLRcjkYmaraGaHPZxy_RqsF_6vw1p7/pub?start=true&loop=true&delayms=3000'">Listen to Music</button>
+        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vRU3M7BXbB9bZc3SxTdG6CRqhh2nPv8rUb3C2TZM-ZmxK5nrQCoB4FTvcnnpbkKPUkzxDPLqVC9JwTu/pub?start=true&loop=true&delayms=3000'">View Music</button>
     </section>
     <section id="cocurricular">
-        <h2>Co-Curricular</h2>
-        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vQaCVQIHff98hXYt4Otteg3L6fQQMnDVlexm3NKiivuLttsokeyz4xbBFsDyKvcjkjD1NEuYBjgYrPH/pub?start=true&loop=true&delayms=3000'">View Co-Curricular Activities</button>
+        <h2>Co-Curricular Activities</h2>
+        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vS44J5th3QJ2kGYr8y4aWoPldp9A6jWS8Oke_YCZSLRCL52Slj8UuNEXe2JYrPH/pub?start=true&loop=true&delayms=3000'">View Co-Curricular Activities</button>
     </section>
     <section id="merit">
         <h2>Merit</h2>
