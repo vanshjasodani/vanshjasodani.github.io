@@ -5,151 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vansh Jasodani's Portfolio</title>
     <link rel="icon" href="images/Web Logo.ico" type="image/x-icon">
-    <meta name="google-site-verification" content="qQorj-iMUK5eo6IZ_P3nLIZa7rkVjNak6r6dyFY2PHA" />
+    <meta name="google-site-verification" content="qQorj-iMUK5eo6IZ_P3nLIZa7rkVjNak6r6dyFY2PHA" /> 
     <style>
-        /* General Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            overflow-x: hidden;
-            background-color: #f4f4f4;
         }
-
         header {
             background-color: #333;
             color: white;
-            padding: 15px;
+            padding: 20px 0;
             text-align: center;
-            position: fixed;
+            position: relative;
             width: 100%;
             top: 0;
             z-index: 1000;
         }
-
-        /* Navigation */
-        .nav-bar {
-            background: #444;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            top: 50px;
-            z-index: 999;
-        }
-
-        .nav-links {
-            list-style-type: none;
-            padding: 0;
+        nav {
             margin: 0;
+            padding: 10px;
+            background-color: #444;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
             text-align: center;
         }
-
-        .nav-links li {
+        nav ul li {
             display: inline;
             margin: 0 10px;
         }
-
-        .nav-links li a {
+        nav ul li a {
             color: white;
             text-decoration: none;
-            font-size: 18px;
-            padding: 10px;
         }
-
-        /* Sections */
         section {
-            padding: 50px 20px;
-            margin: 70px auto;
-            max-width: 900px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            padding: 20px;
+            margin: 10px;
         }
-
         .hero {
             width: 100%;
-            height: 500px;
-            background: url('images/Vansh_Suit.jpg') no-repeat center center/cover;
-            margin-top: 100px;
+            height: 700px;
+            background: url('images/Vansh_Suit.jpg') no-repeat center center;
+            background-size: cover;
+            margin-top: 0px;
         }
-
-        /* Fade-in effect */
-        .fade-in {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
+        #about {
+            position: relative;
+            margin-top: -160px; /* Adjust this value as needed for the desired overlap */
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.3); /* Adjust the opacity here */
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0); /* Adjust the shadow here */
         }
-
-        /* Buttons */
         button {
             display: block;
-            margin: 15px auto;
+            margin: 10px 0;
             padding: 10px 20px;
             background-color: #333;
             color: white;
             border: none;
             cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px;
-            transition: background 0.3s;
         }
-
         button:hover {
             background-color: #555;
         }
-
-        /* Responsive Navigation */
-        .menu-toggle {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: white;
-            position: absolute;
-            right: 20px;
-            top: 15px;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                background: #444;
-                width: 100%;
-                left: 0;
-                top: 50px;
-            }
-
-            .nav-links li {
-                display: block;
-                margin: 10px 0;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-        }
-
         footer {
-            background: #000;
+            background-color: #000;
             color: white;
             text-align: center;
-            padding: 15px;
-            margin-top: 50px;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 <body>
-
     <header>
         <h1>Vansh Jasodani</h1>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     </header>
-
-    <nav class="nav-bar">
-        <ul class="nav-links">
+    <nav>
+        <ul>
             <li><a href="#about">About Me</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#artwork">Art Work</a></li>
@@ -160,48 +98,58 @@
             <li><a href="#techsphere">Techsphere Technologies</a></li>
         </ul>
     </nav>
-
     <div class="hero"></div>
-
     <section id="about">
         <h2>About Me</h2>
-        <p>I am Vansh Kamalkumar Jasodani. I study in grade 8 (as in 2024) at <a href="https://www.rachanaschool.com/" target="_blank">Rachana School</a>. I am also the CEO of Techsphere Technologies.</p>
+        <p>I am Vansh Kamalkumar Jasodani. I study in grade 8 (as in 2024) in <a href="https://www.rachanaschool.com/" target="_blank"> Rachana School </a>. Here you will see my portfolio. <br>
+        Also I am the CEO of Techsphere Technologies.<br>
+        Contact me: vanshamazing96@gmail.com<br>
+        YouTube: <a href="https://youtube.com/@shadowgamerzz98?si=Anz2xdxvK2OlDDxV" target="_blank"> Vansh Jasodani </a> <br>
+        I learned robotics, electronics, progamming and tech from <a href="https://ahmedabad.tinkering.in/" target="_blank"> Tinkering India </a></p>
     </section>
-
     <section id="projects">
         <h2>Projects</h2>
         <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vSYlvPtB2omNvQRjWx7HqB8jRB_Cas0AwBeSEkYSSNMcBW4AvWxjsXcmyMCi6QmiUcuGptCFgh7DeHv/pub?start=true&loop=true&delayms=3000'">RFID Door Lock</button>
-        <!-- Add more project buttons as needed -->
+        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vQZsc7QXValkt6Mlpn8YVPtiNUqmC5wlhEmI1o_AWTxwMLeuV5cBf34gLUBPC-a0z8kX1q_ssqEEgMm/pub?start=true&loop=true&delayms=3000'">Distance Measuring Project</button>
+        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vTXkDQ0gtfgI-_Yc8AGbX0XJJNFdKu5sNiXtNCqJpYzaGrQTyNsIO28S-kuYminrDtZeepcmNSGX3OT/pub?start=true&loop=true&delayms=3000'">Fire Detection Project</button>
+        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vR3MRBI17-H2m-USlt_-LYPPtwe04WA41lgqOMgvhCGRQmU9M4nMB4Sk33HQoKg9fpMcujU-4qlwOIF/pub?start=true&loop=true&delayms=3000'">LDR Project</button>
+        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vQU3FKkUyXR7vBYDzktJaKe9EjKDX2NqAEqYEHGOnTka9E-UHxhAq2k0_X8oDLUmXgRuJwRaVRzYU1o/pub?start=true&loop=true&delayms=3000'">Ultrasonic Sensor Radar</button>
+        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vRcPXG7bEKj2MN5IJPdKidv15zqESMLBc4qRbuxenEbn4Nfaj4NJX2mhpge65IwbMaJ6aDu2ktH99uA/pub?start=true&loop=true&delayms=3000'">Temperature and Humidity Detector</button>
+        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vRLtMCwBsjrYQHbNlH5tEQ_bjziiK19qrRARz_rG6zeNYJG5KZirXi5DZa53a_4BswAgAliMPwWcn94/pub?start=true&loop=true&delayms=3000'">Open Door Detector</button>
+        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vTTtcr7BGORtkuT8uYpJ_drUe6JwwvOFkz5yMBvkzgJoZNwV4GrECcy1iaFuNAkITDAX8L7eRMHEmYs/pub?start=true&loop=true&delayms=3000'">Keypad Door lock</button>
+        <button onclick="window.location.href=' https://docs.google.com/presentation/d/15epqIpot-XnbnGDbbdWZw02Ot18QYYL5bMJqd9ydYic/pub?start=true&loop=true&delayms=3000'">Leap Motion Controller Cursor</button>
+         <button onclick="window.location.href='https://docs.google.com/presentation/d/1FzPDYHNrouLxmt3pFX7_YXtuQie1HYJhnKjglS6wqKY/pub?start=true&loop=true&delayms=3000'">Gas Detection Project</button>       
     </section>
-
     <section id="artwork">
         <h2>Art Work</h2>
         <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vRusRDt4nE0n2Z4uXryKiUO_DXlWyZLxeblDA2Uwc8VAbijQyP6WKi0bmdzmPK5Eu_zlZsueXbsmNG5/pub?start=true&loop=true&delayms=3000'">View Art Work</button>
     </section>
-
+    <section id="music">
+        <h2>Music</h2>
+        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vTHB97nRB8koWGsydSc3Vm7PMHIq__3A-XjExLH95ZNS-EhSdgLRcjkYmaraGaHPZxy_RqsF_6vw1p7/pub?start=true&loop=true&delayms=3000'">Listen to Music</button>
+    </section>
+    <section id="cocurricular">
+        <h2>Co-Curricular</h2>
+        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vQaCVQIHff98hXYt4Otteg3L6fQQMnDVlexm3NKiivuLttsokeyz4xbBFsDyKvcjkjD1NEuYBjgYrPH/pub?start=true&loop=true&delayms=3000'">View Co-Curricular Activities</button>
+    </section>
+    <section id="merit">
+        <h2>Merit</h2>
+        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vQV7vB5zuD3Z3tHpkpIDnVtpfyxgKNlSEeVuYcBcc51akPvSGaWGkCxYI8R_89vsu9EAmfciUwCJQlx/pub?start=true&loop=true&delayms=3000'">View Merits</button>
+    </section>
+    <section id="sports">
+        <h2>Sports</h2>
+        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vQ3A_eJyLJ50Aw3UEhxfcQJC7upJZtyzRRaPQae5AI8vX9Ii8qqhNVZ-z93Sw-tup1YNYv2um__uwMY/pub?start=true&loop=true&delayms=3000'">View Sports Achievements</button>
+    </section>
     <section id="techsphere">
         <h2>Techsphere Technologies</h2>
-        <button onclick="window.location.href='https://vanshjasodani.github.io/Techsphere.html'">View Techsphere Presentation</button>
+        <p><img src="images/TS Logo.png" style=float:left height=120px width=120px>
+            <b>Techsphere Technologies: Innovating for a Smarter Tomorrow</b><br>
+       Founded by Mr. Dhruv Saidava, Techsphere Technologies is a forward-thinking startup committed to bringing innovative solutions to the modern technological landscape. With a passion for cutting-edge technology and a vision for a more connected world, the company is focused on developing tools that empower industries and individuals alike. Recently, Techsphere Technologies introduced its first flagship product, the "Temperature Monitoring Device." Designed with precision and reliability in mind. The link for the presentation is provided below. Under the leadership of CEO Vansh Jasodani, Techsphere Technologies is poised to continue its journey of innovation, transforming challenges into opportunities for a smarter and more connected future.
+        </p>
+        <button onclick="window.location.href='https://vanshjasodani.github.io/Techsphere.html'">View Presentation for Temperature Monitoring Device</button>
     </section>
-
     <footer>
         <p>© 2024 Vansh Jasodani. All rights reserved.</p>
     </footer>
-
-    <script>
-        function toggleMenu() {
-            const navLinks = document.querySelector(".nav-links");
-            navLinks.style.display = navLinks.style.display === "block" ? "none" : "block";
-        }
-
-        document.addEventListener("scroll", function() {
-            document.querySelectorAll("section").forEach((section) => {
-                if (section.getBoundingClientRect().top < window.innerHeight - 100) {
-                    section.classList.add("fade-in");
-                }
-            });
-        });
-    </script>
-
 </body>
 </html>
