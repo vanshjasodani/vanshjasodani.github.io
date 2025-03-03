@@ -5,12 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vansh Jasodani's Portfolio</title>
     <link rel="icon" href="images/Web Logo.ico" type="image/x-icon">
-    <meta name="google-site-verification" content="qQorj-iMUK5eo6IZ_P3nLIZa7rkVjNak6r6dyFY2PHA" /> 
+    <meta name="google-site-verification" content="qQorj-iMUK5eo6IZ_P3nLIZa7rkVjNak6r6dyFY2PHA" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
         }
         header {
             background-color: #333;
@@ -41,64 +47,226 @@
             color: white;
             text-decoration: none;
         }
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
         section {
             padding: 20px;
             margin: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         .hero {
             width: 100%;
             height: 700px;
             background: url('images/Vansh_Suit.jpg') no-repeat center center;
             background-size: cover;
-            margin-top: 0px;
-        }
-        #about {
+            background-attachment: fixed;
             position: relative;
-            margin-top: -160px; /* Adjust this value as needed for the desired overlap */
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.3); /* Adjust the opacity here */
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0); /* Adjust the shadow here */
-        }
-        button {
-            display: block;
-            margin: 10px 0;
-            padding: 10px 20px;
-            background-color: #333;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #555;
-        }
-        footer {
-            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
             text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            overflow: hidden;
+            border-right: .15em solid orange;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+            color: #333;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: orange; }
+        }
+        .flip-card {
+            background-color: transparent;
+            width: 300px;
+            height: 200px;
+            perspective: 1000px;
+            margin: 10px;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+        }
+        .flip-card-front {
+            background-color: #bbb;
+            color: black;
+        }
+        .flip-card-back {
+            background-color: #333;
+            color: white;
+            transform: rotateY(180deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+        }
+        .back-to-top:hover {
+            background-color: #555;
+        }
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+        }
+        .loading-spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .testimonials {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .testimonial {
+            background-color: #444;
+            color: white;
+            padding: 20px;
+            margin: 10px;
+            width: 300px;
+            border-radius: 10px;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #444;
+            color: white;
+            border-radius: 10px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: #555;
+        }
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+            }
+            nav ul.active {
+                display: flex;
+            }
+            .flip-card {
+                width: 100%;
+            }
+        }
+         footer {
+            background-color: #000; /* Black background */
+            color: white; /* White text */
+            text-align: center; /* Center align text */
             padding: 10px 0;
             position: relative;
             bottom: 0;
             width: 100%;
+            margin-top: 20px; /* Add some space above the footer */
+        }
+
+        body.dark-mode footer {
+            background-color: white; /* White background */
+            color: black; /* Black text */
         }
     </style>
 </head>
 <body>
+    <div class="loading">
+        <div class="loading-spinner"></div>
+    </div>
     <header>
-        <h1>Vansh Jasodani</h1>
+        <h1 id="typewriter"></h1>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#artwork">Art Work</a></li>
+                <li><a href="#music">Music</a></li>
+                <li><a href="#cocurricular">Co-Curricular</a></li>
+                <li><a href="#merit">Merit</a></li>
+                <li><a href="#sports">Sports</a></li>
+                <li><a href="#techsphere">Techsphere Technologies</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+                <li><button onclick="toggleDarkMode()">Toggle Dark Mode</button></li>
+            </ul>
+        </nav>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#artwork">Art Work</a></li>
-            <li><a href="#music">Music</a></li>
-            <li><a href="#cocurricular">Co-Curricular</a></li>
-            <li><a href="#merit">Merit</a></li>
-            <li><a href="#sports">Sports</a></li>
-            <li><a href="#techsphere">Techsphere Technologies</a></li>
-        </ul>
-    </nav>
-    <div class="hero"></div>
+    <div class="hero">
+        <h1>Vansh Jasodani</h1>
+    </div>
     <section id="about">
         <h2>About Me</h2>
         <p>I am Vansh Kamalkumar Jasodani. I study in grade 8 (as in 2024) in <a href="https://www.rachanaschool.com/" target="_blank"> Rachana School </a>. Here you will see my portfolio. <br>
@@ -109,16 +277,116 @@
     </section>
     <section id="projects">
         <h2>Projects</h2>
-        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vSYlvPtB2omNvQRjWx7HqB8jRB_Cas0AwBeSEkYSSNMcBW4AvWxjsXcmyMCi6QmiUcuGptCFgh7DeHv/pub?start=true&loop=true&delayms=3000'">RFID Door Lock</button>
-        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vQZsc7QXValkt6Mlpn8YVPtiNUqmC5wlhEmI1o_AWTxwMLeuV5cBf34gLUBPC-a0z8kX1q_ssqEEgMm/pub?start=true&loop=true&delayms=3000'">Distance Measuring Project</button>
-        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vTXkDQ0gtfgI-_Yc8AGbX0XJJNFdKu5sNiXtNCqJpYzaGrQTyNsIO28S-kuYminrDtZeepcmNSGX3OT/pub?start=true&loop=true&delayms=3000'">Fire Detection Project</button>
-        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vR3MRBI17-H2m-USlt_-LYPPtwe04WA41lgqOMgvhCGRQmU9M4nMB4Sk33HQoKg9fpMcujU-4qlwOIF/pub?start=true&loop=true&delayms=3000'">LDR Project</button>
-        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vQU3FKkUyXR7vBYDzktJaKe9EjKDX2NqAEqYEHGOnTka9E-UHxhAq2k0_X8oDLUmXgRuJwRaVRzYU1o/pub?start=true&loop=true&delayms=3000'">Ultrasonic Sensor Radar</button>
-        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vRcPXG7bEKj2MN5IJPdKidv15zqESMLBc4qRbuxenEbn4Nfaj4NJX2mhpge65IwbMaJ6aDu2ktH99uA/pub?start=true&loop=true&delayms=3000'">Temperature and Humidity Detector</button>
-        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vRLtMCwBsjrYQHbNlH5tEQ_bjziiK19qrRARz_rG6zeNYJG5KZirXi5DZa53a_4BswAgAliMPwWcn94/pub?start=true&loop=true&delayms=3000'">Open Door Detector</button>
-        <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vTTtcr7BGORtkuT8uYpJ_drUe6JwwvOFkz5yMBvkzgJoZNwV4GrECcy1iaFuNAkITDAX8L7eRMHEmYs/pub?start=true&loop=true&delayms=3000'">Keypad Door lock</button>
-        <button onclick="window.location.href=' https://docs.google.com/presentation/d/15epqIpot-XnbnGDbbdWZw02Ot18QYYL5bMJqd9ydYic/pub?start=true&loop=true&delayms=3000'">Leap Motion Controller Cursor</button>
-         <button onclick="window.location.href='https://docs.google.com/presentation/d/1FzPDYHNrouLxmt3pFX7_YXtuQie1HYJhnKjglS6wqKY/pub?start=true&loop=true&delayms=3000'">Gas Detection Project</button>       
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h3>RFID Door Lock</h3>
+                </div>
+                <div class="flip-card-back">
+                    <p>An advanced security system using RFID technology.</p>
+                    <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vSYlvPtB2omNvQRjWx7HqB8jRB_Cas0AwBeSEkYSSNMcBW4AvWxjsXcmyMCi6QmiUcuGptCFgh7DeHv/pub?start=true&loop=true&delayms=3000'">View Project</button>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h3>Distance Measuring Project</h3>
+                </div>
+                <div class="flip-card-back">
+                    <p>A project to measure distances using ultrasonic sensors.</p>
+                    <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vQZsc7QXValkt6Mlpn8YVPtiNUqmC5wlhEmI1o_AWTxwMLeuV5cBf34gLUBPC-a0z8kX1q_ssqEEgMm/pub?start=true&loop=true&delayms=3000'">View Project</button>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h3>Fire Detection Project</h3>
+                </div>
+                <div class="flip-card-back">
+                    <p>A system to detect fire and alert users.</p>
+                    <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vTXkDQ0gtfgI-_Yc8AGbX0XJJNFdKu5sNiXtNCqJpYzaGrQTyNsIO28S-kuYminrDtZeepcmNSGX3OT/pub?start=true&loop=true&delayms=3000'">View Project</button>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h3>LDR Project</h3>
+                </div>
+                <div class="flip-card-back">
+                    <p>A project using Light Dependent Resistors to detect light levels.</p>
+                    <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vR3MRBI17-H2m-USlt_-LYPPtwe04WA41lgqOMgvhCGRQmU9M4nMB4Sk33HQoKg9fpMcujU-4qlwOIF/pub?start=true&loop=true&delayms=3000'">View Project</button>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h3>Ultrasonic Sensor Radar</h3>
+                </div>
+                <div class="flip-card-back">
+                    <p>A radar system using ultrasonic sensors.</p>
+                    <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vQU3FKkUyXR7vBYDzktJaKe9EjKDX2NqAEqYEHGOnTka9E-UHxhAq2k0_X8oDLUmXgRuJwRaVRzYU1o/pub?start=true&loop=true&delayms=3000'">View Project</button>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h3>Temperature and Humidity Detector</h3>
+                </div>
+                <div class="flip-card-back">
+                    <p>A device to measure temperature and humidity.</p>
+                    <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vRLtMCwBsjrYQHbNlH5tEQ_bjziiK19qrRARz_rG6zeNYJG5KZirXi5DZa53a_4BswAgAliMPwWcn94/pub?start=true&loop=true&delayms=3000'">View Project</button>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h3>Open Door Detector</h3>
+                </div>
+                <div class="flip-card-back">
+                    <p>A system to detect if a door is open or closed.</p>
+                    <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vTTtcr7BGORtkuT8uYpJ_drUe6JwwvOFkz5yMBvkzgJoZNwV4GrECcy1iaFuNAkITDAX8L7eRMHEmYs/pub?start=true&loop=true&delayms=3000'">View Project</button>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h3>Keypad Door Lock</h3>
+                </div>
+                <div class="flip-card-back">
+                    <p>A secure door lock system using a keypad.</p>
+                    <button onclick="window.location.href='https://docs.google.com/presentation/d/e/2PACX-1vTTtcr7BGORtkuT8uYpJ_drUe6JwwvOFkz5yMBvkzgJoZNwV4GrECcy1iaFuNAkITDAX8L7eRMHEmYs/pub?start=true&loop=true&delayms=3000'">View Project</button>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h3>Leap Motion Controller Cursor</h3>
+                </div>
+                <div class="flip-card-back">
+                    <p>A project to control the cursor using Leap Motion.</p>
+                    <button onclick="window.location.href='https://docs.google.com/presentation/d/15epqIpot-XnbnGDbbdWZw02Ot18QYYL5bMJqd9ydYic/pub?start=true&loop=true&delayms=3000'">View Project</button>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h3>Gas Detection Project</h3>
+                </div>
+                <div class="flip-card-back">
+                    <p>A system to detect hazardous gases.</p>
+                    <button onclick="window.location.href='https://docs.google.com/presentation/d/1FzPDYHNrouLxmt3pFX7_YXtuQie1HYJhnKjglS6wqKY/pub?start=true&loop=true&delayms=3000'">View Project</button>
+                </div>
+            </div>
+        </div>
     </section>
     <section id="artwork">
         <h2>Art Work</h2>
@@ -148,8 +416,84 @@
         </p>
         <button onclick="window.location.href='https://vanshjasodani.github.io/Techsphere.html'">View Presentation for Temperature Monitoring Device</button>
     </section>
+    <section id="testimonials">
+        <h2>Testimonials</h2>
+        <div class="testimonials">
+            <div class="testimonial">
+                <p>"Vansh is an exceptional student with a keen interest in technology and innovation."</p>
+                <p>- Teacher, Rachana School</p>
+            </div>
+            <div class="testimonial">
+                <p>"His projects are always well-thought-out and executed with precision."</p>
+                <p>- Mentor, Tinkering India</p>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-form">
+            <form action="https://formspree.io/f/xjvjqjqj" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
     <footer>
         <p>© 2024 Vansh Jasodani. All rights reserved.</p>
     </footer>
+    <div class="back-to-top" onclick="scrollToTop()">&#8679;</div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                document.querySelector('.loading').style.display = 'none';
+            }, 2000);
+            const sections = document.querySelectorAll('section');
+            const options = {
+                threshold: 0.1
+            };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, options);
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            const typewriterElement = document.getElementById('typewriter');
+            const text = "Vansh Jasodani";
+            let i = 0;
+            function typeWriter() {
+                if (i < text.length) {
+                    typewriterElement.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                }
+            }
+            typeWriter();
+            window.onscroll = function() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    document.querySelector('.back-to-top').style.display = 'block';
+                } else {
+                    document.querySelector('.back-to-top').style.display = 'none';
+                }
+            };
+        });
+        function toggleMenu() {
+            const navUl = document.querySelector('nav ul');
+            navUl.classList.toggle('active');
+        }
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
 </body>
 </html>
